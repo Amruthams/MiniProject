@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>registration</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/reg/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/reg/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="static/reg/images/signup-img.jpg" alt="">
+                </div>
+                <div class="signup-form">
+                    <form method="post" class="register-form" id="register-form" action="/user_registration_post">
+                        <h2></h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name :</label>
+                                <input type="text" name="textfield" id="name" required />
+                            </div>
+                        </div>
+<!--                            <div class="form-group">-->
+<!--                                <label for="father_name">Father Name :</label>-->
+<!--                                <input type="text" name="father_name" id="father_name" required/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="textfield2" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}" />
+                        </div>
+                            <div class="form-group">
+                            <label for="place">Place</label>
+                            <input type="text" name="textfield4" id="place" required/>
+                        </div>
+                            <div class="form-group">
+                            <label for="post">Post</label>
+                            <input type="text" name="textfield5" id="post" required  />
+                        </div>
+                            <div class="form-group">
+                            <label for="pin">Pin</label>
+                            <input type="text" name="textfield6" id="pin" required pattern="[0-9]{6}"/>
+                        </div>
+                            <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" name="textfield7" id="city" required />
+                        </div>
+                            <div class="form-group">
+                            <label for="phone">Phone No</label>
+                            <input type="text" name="textfield8" id="phone" required  pattern="[0-9]{10}"/>
+                        </div>
+                            <div class="form-group">
+                            <label for="pwd">Password</label>
+                            <input type="password" name="textfield9" id="pwd" required pattern="[a-z A-Z].{8,}" />
+                        </div>
+                            <div class="form-group">
+                            <label for="confirm">Confirm Password</label>
+                            <input type="password" name="textfield3" id="confirm" required onkeyup="vv()" pattern="[a-z A-Z].{8,}" />
+                                <span id ="wrong_pass_alert"></span>
+                        </div>
+<!--                        <div class="form-radio">-->
+<!--                            <label for="gender" class="radio-label">Gender :</label>-->
+<!--                            <div class="form-radio-item">-->
+<!--                                <input type="radio" name="gender" id="male" checked>-->
+<!--                                <label for="male">Male</label>-->
+<!--                                <span class="check"></span>-->
+<!--                            </div>-->
+<!--                            <div class="form-radio-item">-->
+<!--                                <input type="radio" name="gender" id="female">-->
+<!--                                <label for="female">Female</label>-->
+<!--                                <span class="check"></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-row">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="state">State :</label>-->
+<!--                                <div class="form-select">-->
+<!--                                    <select name="state" id="state">-->
+<!--                                        <option value=""></option>-->
+<!--                                        <option value="us">America</option>-->
+<!--                                        <option value="uk">English</option>-->
+<!--                                    </select>-->
+<!--                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="city">City :</label>-->
+<!--                                <div class="form-select">-->
+<!--                                    <select name="city" id="city">-->
+<!--                                        <option value=""></option>-->
+<!--                                        <option value="losangeles">Los Angeles</option>-->
+<!--                                        <option value="washington">Washington</option>-->
+<!--                                    </select>-->
+<!--                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="birth_date">DOB :</label>-->
+<!--                            <input type="text" name="birth_date" id="birth_date">-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="pincode">City</label>-->
+<!--                            <input type="text" name="pincode" id="pincode">-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="course">Phone No</label>-->
+<!--                            <div class="form-select">-->
+<!--                                <select name="course" id="course">-->
+<!--                                    <option value=""></option>-->
+<!--                                    <option value="computer">Computer Operator & Pragramming Assistant</option>-->
+<!--                                    <option value="desiger">Designer</option>-->
+<!--                                    <option value="marketing">Marketing</option>-->
+<!--                                </select>-->
+<!--                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="email">Email ID :</label>-->
+<!--                            <input type="email" name="email" id="email" />-->
+<!--                        </div>-->
+                        <div class="form-submit">
+<!--                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />-->
+                            <input type="submit" value="Sign Up" class="submit" name="button" id="submit" />
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+											function vv()
+											{
+												var pass = document.getElementById('pwd').value;
+											var confirm_pass = document.getElementById('confirm').value;
+											if (pass != confirm_pass) {
+
+
+												document.getElementById('wrong_pass_alert').style.color = 'red';
+												document.getElementById('wrong_pass_alert').innerHTML
+												= '☒ Use same password';
+												document.getElementById('create').disabled = true;
+												document.getElementById('create').style.opacity = (0.4);
+											} else {
+												document.getElementById('wrong_pass_alert').style.color = 'green';
+												document.getElementById('wrong_pass_alert').innerHTML =
+													'🗹 Password Matched';
+												document.getElementById('create').disabled = false;
+												document.getElementById('create').style.opacity = (1);
+			}
+											}
+										</script>
+
+    <!-- JS -->
+    <script src="/static/reg/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/reg/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

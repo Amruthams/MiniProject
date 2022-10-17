@@ -1,0 +1,50 @@
+{% extends 'userindex.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/user_cancelorder_post">
+  <div class="card">
+    <div class="card-body">
+  <table width="557" height="232" border="0" class="table table-borderless table-striped table-hover">
+    <tr>
+           <th>SL</th>
+      <th>Date</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone no</th>
+      <th>Status</th>
+      <td>&nbsp;</td>
+      <td></td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['DeliveryDate'] }}</td>
+      <td>{{ i['House'] }},<br>{{ i['Place'] }},<br>{{i['Post']}},<br>{{i['Pin']}},<br>{{i['City']}},<br>{{i['District']}}</td>
+      <td>{{ i['Email'] }}</td>
+      <td>{{ i['Phoneno'] }}</td>
+      <td>&nbsp;{{ i['Status'] }}</td>
+
+      <td><a href="/user_cancelorder/{{i['order_id']}}">Cancel</a></td>
+      <td><a href="/user_viewordermore/{{i['order_id']}}">view more</a></td>
+    </tr>
+      {% endfor %}
+
+
+
+
+  </table>
+    </div>
+  </div>
+</form>
+</body>
+</html>
+
+{% endblock %}

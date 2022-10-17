@@ -1,0 +1,40 @@
+{% extends 'userindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/user_customorders_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="598" height="483" border="1">
+    <tr>
+      <td>Material</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" /></td>
+    </tr>
+    <tr>
+      <td>Quantity</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" /></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" name="button" id="button" value="Place Order" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

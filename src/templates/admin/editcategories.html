@@ -1,0 +1,37 @@
+{% extends 'admindash.html' %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/edit_admin_category_management_post">
+  <div class="card">
+    <div class="card-body">
+  <table width="376" height="178" border="0" class="table table-borderless table-striped table-hover">
+    <tr>
+      <th>Category</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" value="{{ data['Categoryname'] }}"  class="form-control" id="textfield" /></td>
+      <input type="hidden" name="cat" value="{{ data['Category_id'] }}" /></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>
+        <textarea name="textarea" class="form-control">{{ data['Description'] }}</textarea>
+      </td>
+    </tr>
+    <tr align="center">
+      <td colspan="2"><input type="submit" name="button"  class="btn btn-danger" id="button" value="Update" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

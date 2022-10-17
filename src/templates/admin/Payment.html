@@ -1,0 +1,39 @@
+{% extends 'admindash.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/view_admin_payment_post">
+  <div class="card">
+    <div class="card-body">
+  <table width="734" height="168" border="0" class="table table-borderless table-striped table-hover">
+    <tr>
+      <th>SL</th>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Modeofpayment</th>
+      <th>Amount</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['Date'] }}</td>
+      <td>&nbsp;{{ i['username'] }}</td>
+      <td>&nbsp;{{ i['modeofpayment'] }}</td>
+      <td>&nbsp;{{ i['Amount'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+    </div>
+  </div>
+</form>
+</body>
+</html>
+
+{% endblock %}

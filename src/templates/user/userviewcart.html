@@ -1,0 +1,73 @@
+
+{% extends 'userindex.html' %}
+{% block body %}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<!--<form id="form1" name="form1" method="post" action="/user_order">-->
+<!--  <div class="card">-->
+<!--    <div class="card-body">-->
+<!--  <table class="table table-borderless table-striped table-hover">-->
+
+<!--    <tr>-->
+<!--      <th>SL</th>-->
+<!--      <th>Name</th>-->
+<!--      <th>Price</th>-->
+<!--           <th>Quantity</th>-->
+<!-- <th>Image</th>-->
+<!--      <th>Description</th>-->
+<!--      <th></th>-->
+
+<!--    </tr>-->
+<!--    {% for i in data %}-->
+<!--    <tr>-->
+<!--      <td>&nbsp;{{ loop.index }}</td>-->
+<!--      <td>{{ i["name"] }}</td>-->
+<!--      <td>&nbsp;{{ i["price"] }}</td>-->
+<!--            <td>&nbsp;{{ i["Quantity"] }}</td>-->
+<!--<td><img src="{{ i['image'] }}" width="200px" height="200px" />  </td>-->
+<!--      <td>&nbsp;{{ i["description"] }}</td>-->
+<!--        <td><a href="/user_removecart/{{ i['cart_id'] }} ">Remove</a> </td>-->
+
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--      <tr>-->
+<!--          <td colspan="7" align="center"><a href="/user_order">Place Order</a></td></tr>-->
+<!--  </table>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</form>-->
+
+
+<div class="row">
+    {% for i in data %}
+  <div class="col-lg-4">
+      <div class="card" >
+       <p align="center" ><img src="{{ i['image'] }}" width="200px" height="200px" style="border-radius:20%;margin-top:20px" /></p>
+      <h3><p align="center"> {{ i["name"] }}</p></h3>
+      <p style="margin-left:30px">Price : {{ i["price"] }}</p>
+
+      <p style="margin-left:30px">{{ i["description"] }}</p>
+      <p style="margin-left:30px">{{ i["Categoryname"] }}</p>
+      <p style="margin-left:30px">Stock :{{ i["stock"] }}</p>
+      <p align="center"><a href="/user_removecart/{{ i['cart_id'] }} " class="btn btn-outline-warning">Remove</a> </p>
+          <br>
+
+        </div>
+  </div>
+  {% endfor %}
+</div>
+
+<p align="center"><a href="/user_order" class="btn btn-warning">Place Order</a></p>
+
+
+</body>
+</html>
+
+{% endblock %}
+

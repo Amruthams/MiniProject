@@ -1,0 +1,51 @@
+{% extends 'admindash.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/search_admin_feedback_post">
+  <div class="card">
+    <div class="card-body">
+  <table width="718" height="219" border="0" class="table table-borderless table-striped table-hover">
+    <tr>
+      <td colspan="5"><p>From
+          <label for="textfield"></label>
+      <input type="Date" name="textfield" class="form-control-sm" id="textfield" />&nbsp;&nbsp;
+     To
+        <label for="textfield2"></label>
+        <input type="Date"  class="form-control-sm" name="textfield2" id="textfield2" />
+
+          <input type="submit" name="button" class="btn btn-danger" id="button" value="search" />
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th>SL</th>
+      <th>Date</th>
+      <th>Name</th>
+      <th>ProductName</th>
+      <th>Feedback</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Date'] }}</td>
+      <td>{{i ['username'] }}</td>
+      <td>{{i ['name'] }}</td>
+      <td>{{i ['feedback'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+    </div>
+  </div>
+</form>
+</body>
+</html>
+
+{% endblock %}

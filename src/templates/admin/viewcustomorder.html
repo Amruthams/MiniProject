@@ -1,0 +1,48 @@
+{% extends 'admindash.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/view_admin_custom_order_post">
+   <div class="card">
+    <div class="card-body">
+  <table width="881" height="314" border="0" class="table table-borderless table-striped table-hover">
+    <tr>
+      <th>SL</th>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone no</th>
+      <td></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+
+    </tr>
+    {% for i in data %}
+    <tr>
+
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['Date'] }}</td>
+      <td>&nbsp;{{ i['username'] }}</td>
+      <td>&nbsp;{{ i['place'] }},<br>{{i['post']}},<br> {{ i['pin']}},<br>{{ i['city']}}</td>
+      <td>&nbsp;{{i['emailid']}}</td>
+      <td>&nbsp;{{i['phoneno']}}</td>
+      <td><a href="/approve_custorder/{{i['cust_id']}}#abc">Approve</a></td>
+      <td><a href="/reject_custorder/{{i['cust_id']}}#abc">Reject</a></td>
+      <td><p><a href="/view_admin_custom_order_more/{{i['cust_id']}}#abc">Viewmore</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+    </div>
+   </div>
+</form>
+</body>
+</html>
+{% endblock %}

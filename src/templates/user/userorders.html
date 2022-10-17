@@ -1,0 +1,78 @@
+{% extends 'userindex.html' %}
+{% block body %}
+
+
+<script src="/static/homeassets/js/jquery.js"></script>
+<script>
+ $(document).ready(function(){
+
+ $("#hint").hide();
+<!--  $("p").click(function(){-->
+<!--    $(this).hide();-->
+<!--  });-->
+});
+</script>
+<body>
+<form id="form1" name="form1" method="post" action="/user_order_post">
+  <div class="card">
+    <div class="card-body">
+  <table width="610" height="498" border="0" class="table table-borderless table-striped table-hover">
+    <tr>
+      <td>Account No</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" class="form-control" id="textfield" /></td>
+    </tr>
+    <tr>
+      <td>IFSC</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" class="form-control" id="textfield2" />
+
+      </td>
+    </tr>
+    <tr>
+      <td>Shipping Address</td>
+      <td>
+
+        {% if p=="yes" %}
+        {% for i in data %}
+
+        <input type="radio" name="address" value="{{ i["order_id"]}}">
+        <p>{{ i["House"] }}<br>{{ i["Place"] }}<br>{{ i["Post"] }}<br>{{ i["Pin"] }}<br>{{ i["City"] }}<br>{{ i["District"] }}<br>{{ i["Phoneno"] }}<br>>{{ i["Email"] }}</p>
+        <br>
+        {% endfor %}
+{% endif %}
+        <label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" placeholder="House name" class="form-control" />
+      <label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" placeholder="Place" class="form-control" />
+      <label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" placeholder="Post" class="form-control" />
+        <label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" placeholder="Pin" class="form-control" />
+        <label for="textfield7"></label>
+      <input type="text" name="textfield7" id="textfield7" placeholder="City" class="form-control" />
+        <label for="textfield8"></label>
+      <input type="text" name="textfield8" id="textfield8" placeholder="District" class="form-control" />
+        <label for="textfield9"></label>
+      <input type="text" name="textfield9" id="textfield9" placeholder="Phone No" class="form-control" />
+          <label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" placeholder="Email" class="form-control" />
+
+
+      </td>
+      <tr>
+    <td>
+      <input type="radio" name="address" value="no" checked id="hint"/>
+    </td>
+
+    </tr>
+   <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" class="btn btn-danger" id="button" value="Place Order" /></td>
+    </tr>
+  </table>
+    </div>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

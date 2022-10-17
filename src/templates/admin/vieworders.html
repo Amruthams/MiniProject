@@ -1,0 +1,44 @@
+{% extends 'admindash.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/view_admin_orders_post">
+   <div class="card">
+    <div class="card-body">
+  <table width="560" height="263" border="0" class="table table-borderless table-striped table-hover">
+    <tr>
+      <th>SL</th>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone no</th>
+      <th>Status</th>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr>
+       <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['DeliveryDate'] }}</td>
+      <td>{{i['username']}}</td>
+      <td>{{ i['House'] }},{{ i['Place'] }},<br>{{i['Post']}},{{i['Pin']}},<br>{{i['City']}},{{i['District']}}</td>
+      <td>{{ i['Email'] }}</td>
+      <td>{{ i['Phoneno'] }}</td>
+      <td>&nbsp;{{ i['Status'] }}</td>
+ <td><a href="/view_admin_order_more/{{i['order_id']}}">Products</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+    </div>
+   </div>
+</form>
+</body>
+</html>
+{% endblock %}

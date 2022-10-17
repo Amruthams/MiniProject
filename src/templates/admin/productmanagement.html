@@ -1,0 +1,82 @@
+{% extends 'admindash.html' %}
+{% block body %}
+
+
+<body>
+<!--<form id="form1" name="form1" method="post" action="/search_admin_product_post">-->
+<!--  <div class="card">-->
+<!--    <div class="card-body">-->
+<!--  <table width="726" height="427" border="0" class="table table-borderless table-striped table-hover">-->
+<!--     <tr>-->
+<!--      <td colspan="8">Category-->
+<!--        <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">-->
+<!--         {% for i in data1 %}-->
+<!--        <option value="{{ i['Category_id']}}">{{ i['Categoryname']}}</option>-->
+<!--        {% endfor %}-->
+<!--      </select>-->
+<!--      <input type="submit" name="button" id="button" value="Search" /></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>SL</th>-->
+<!--      <th>Name</th>-->
+<!--      <th>Price</th>-->
+<!--      <th>Image</th>-->
+<!--      <th>Description</th>-->
+<!--      <th>Category</th>-->
+<!--      <th>Stock</th>-->
+<!--      <td> </td>-->
+<!--      <td>&nbsp;</td>-->
+<!--    </tr>-->
+<!--    {% for i in data %}-->
+<!--    <tr>-->
+<!--      <td>&nbsp;{{ loop.index }}</td>-->
+<!--      <td>{{ i["name"] }}</td>-->
+<!--      <td>&nbsp;{{ i["price"] }}</td>-->
+<!--      <td><img src="{{ i['image'] }}" width="200px" height="200px" />  </td>-->
+<!--      <td>&nbsp;{{ i["description"] }}</td>-->
+<!--      <td>&nbsp;{{ i["Categoryname"] }}</td>-->
+<!--      <td>&nbsp;{{ i["stock"] }}</td>-->
+<!--      <td><a href="/admin_edit_product/{{ i['Product_id'] }}#abc">Edit</a></td>-->
+<!--      <td><p><a href="/delete_view_admin_product_manage/{{ i['Product_id'] }}" onclick="return confirm('Are you sure!')">Delete</a></td>-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--  </table>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</form>-->
+
+
+<br><br>
+<div>
+    Category
+    <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+        {% for i in data1 %}
+       <option value="{{ i['Category_id']}}">{{ i['Categoryname']}}</option>
+       {% endfor %}
+     </select>
+      <input type="submit" name="button" id="button" value="Search" />
+</div>
+<br>
+<br>
+
+<div class="row">
+    {% for i in data %}
+  <div class="col-lg-4">
+      <div class="card" >
+       <p align="center" ><img src="{{ i['image'] }}" width="200px" height="200px" style="border-radius:20%;margin-top:20px" /></p>
+      <h3><p align="center"> {{ i["name"] }}</p></h3>
+      <p style="margin-left:30px">Price : {{ i["price"] }}</p>
+
+      <p style="margin-left:30px">{{ i["description"] }}</p>
+      <p style="margin-left:30px">{{ i["Categoryname"] }}</p>
+      <p style="margin-left:30px">Stock :{{ i["stock"] }}</p>
+      <p align="center"><a href="/admin_edit_product/{{ i['Product_id'] }}#abc" class="btn btn-outline-warning">Edit</a></p>
+      <p align="center"><a href="/delete_view_admin_product_manage/{{ i['Product_id'] }}" onclick="return confirm('Are you sure!')" class="btn btn-outline-warning">Delete</a></p>
+        </div>
+  </div>
+  {% endfor %}
+</div>
+</body>
+</html>
+
+{% endblock %}
